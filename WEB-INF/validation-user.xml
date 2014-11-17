@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form-validation>
+	<formset>
+		<form name="newuserForm">
+			<field property="name" depends="required">
+				<arg key="label.common.name" />
+			</field>
+			<field property="password2" depends="required,minlength,maxlength">
+				<arg0 key="label.common.password2" />
+				<arg1 key="${var:minlength}" name="minlength" resource="false" />
+				<arg2 key="${var:maxlength}" name="maxlength" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+			</field>
+			<field property="email2" depends="required,email">
+				<arg0 key="label.common.email2" />
+			</field>
+
+		</form>
+		<form name="userForm">
+			<field property="password" depends="required,minlength,maxlength">
+				<arg0 key="label.common.password" />
+				<arg1 key="${var:minlength}" name="minlength" resource="false" />
+				<arg2 key="${var:maxlength}" name="maxlength" resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+			</field>
+			<field property="email" depends="required,email">
+				<arg0 key="label.common.email" />
+			</field>
+		</form>
+	</formset>
+</form-validation>
