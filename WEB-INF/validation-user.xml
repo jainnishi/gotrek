@@ -21,6 +21,9 @@
 			<field property="email2" depends="required,email">
 				<arg0 key="label.common.email2" />
 			</field>
+			<field property="mobileno" depends="required,invalid">
+				<arg position="0" key="label.common.mobileno" />
+			</field>
 
 		</form>
 		<form name="userForm">

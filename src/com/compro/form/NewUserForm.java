@@ -14,7 +14,15 @@ public class NewUserForm extends ValidatorForm {
 	String name;
 	String password2;
 	String email2;
-	String repassword;
+	String mobileno;
+	public String getMobileno() {
+		return mobileno;
+	}
+
+	public void setMobileno(String mobileno) {
+		this.mobileno = mobileno;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -39,13 +47,7 @@ public class NewUserForm extends ValidatorForm {
 		this.email2 = email2;
 	}
 
-	public String getRepassword() {
-		return repassword;
-	}
-
-	public void setRepassword(String repassword) {
-		this.repassword = repassword;
-	}
+	
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -55,10 +57,11 @@ public class NewUserForm extends ValidatorForm {
 	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		// reset properties
-		email2 = null;
+		name= null;
 		password2 = null;
-		repassword = null;
-		name = null;
+		email2=null;
+		mobileno=null;
+		
 	}
 	
 

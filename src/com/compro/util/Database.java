@@ -112,7 +112,7 @@ public class Database {
 			conn = DriverManager.getConnection("jdbc:mysql://"
 					+ this.serverName + "/" + this.dbName,
 					connectionProps);
-			String sql ="INSERT INTO USER_INFO(first,Email,Password)"+"VALUES(?,?,MD5(?))";
+			String sql ="INSERT INTO USER_INFO(first,Email,Password)"+"VALUES(?,?,SHA1(?))";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1,user_name);
 			stmt.setString(2,user_email);
@@ -130,6 +130,61 @@ public class Database {
 			conn.close();
 		}
 	}
+	
+	//match the password entered is correct or incorrect
+	public String verifypassword(String email,String password)throws SQLException{
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(Exception ce){
+			ce.printStackTrace();
+		}
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		PreparedStatement stmt2 = null;
+		Properties connectionProps = new Properties();
+		connectionProps.put("user", this.userName);
+		connectionProps.put("password", this.password);
+
+		conn = DriverManager.getConnection("jdbc:mysql://"
+				+ this.serverName + "/" + this.dbName,
+				connectionProps);
+		String vpass="";
+		String lpass="";
+		try{
+			String sql ="SELECT * FROM user_info WHERE Email=? ";
+			String resql = "SELECT SHA1(?) AS decodepass";
+			stmt = conn.prepareStatement(sql);
+			stmt2 = conn.prepareStatement(resql);
+			stmt2.setString(1,password);
+			stmt.setString(1,email);
+			
+			
+			// execute the preparedstatement
+			ResultSet rs = stmt.executeQuery();
+			ResultSet rsv = stmt2.executeQuery();
+			while(rs.next()){
+				vpass = rs.getString("Password");
+			}
+			while(rsv.next()){
+				lpass = rsv.getString("decodepass");
+			}
+			if(vpass.equals(lpass)){
+				return "true";
+			}else{
+				return "false";
+			}
+			
+		}catch (SQLException e) {
+			System.out.println("ERROR: Could not connect to the database");
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			conn.close();
+		}
+		return "false";
+	}
+			
 
 
 	//Drop a Table
@@ -153,7 +208,7 @@ public class Database {
 	}
 
 //	public static void main(String[] args) throws SQLException{
-//		UserDatabase usd = new UserDatabase();
+//		Database usd = new Database();
 //		//Connection conn = null;
 //
 //	/*	try {
@@ -213,6 +268,13 @@ public class Database {
 //		
 //		
 //
-//	}
+//	
+//		try{
+//			String result=usd.verifypassword("ANU.GOELl@GMAIL.COM","ANU");
+//			System.out.println(result);
+//		}catch(SQLException s){
+//			s.printStackTrace();
+//		}
+//		}
 
 }

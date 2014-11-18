@@ -44,7 +44,7 @@
 					</div>
 					<div class="form-group">
 						<bean:message key="label.common.password" />
-						<html:text property="password" styleClass="form-control"
+						<html:password property="password" styleClass="form-control"
 							styleId="exampleInputPassword2"/>
 					</div>
 					<html:submit>
@@ -55,8 +55,10 @@
 					</html:reset>
 					
 				</html:form>
-				<font color="red"> <html:errors />
-				</font>
+				<font color="red">
+						<html:errors property="email"/>
+						<html:errors property="password"/>
+					</font>
 				
 			</div>
 			<div style="margin-top: 50px;">
@@ -92,7 +94,11 @@
 					</div>
 					<div class="col-md-4 register">
 						<h3>Let's trek together...get Registered!</h3>
-						<br /> <br /> <font color="red"> <html:errors />
+						<br /> <br /> <font color="red">
+						<html:errors property="name"/> 
+						<html:errors property="email2"/>
+						<html:errors property="password2"/>
+						<html:errors property="mobileno"/>
 						</font>
 						<html:form action="/newuser" styleId="register_form" method="post" onreset="true">
 							<div class="form-group" id="Name1">
@@ -103,13 +109,14 @@
 								<bean:message key="label.common.email2" />
 								<html:text property="email2" styleClass="form-control" />
 							</div>
+							
 							<div class="form-group" id="Password1">
 								<bean:message key="label.common.password2" />
-								<html:text property="password2" styleClass="form-control" />
+								<html:password property="password2" styleClass="form-control" />
 							</div>
-							<div class="form-group" id="Password1">
-								<bean:message key="label.common.repassword" />
-								<html:text property="repassword" styleClass="form-control"/>
+							<div class="form-group">
+								<bean:message key="label.common.mobileno" />
+								<html:text property="mobileno" styleClass="form-control"/>
 							</div>
 							<div class="checkbox">
 								<label><input type="checkbox"> Remember me</label>
