@@ -11,6 +11,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.compro.entity.User;
+import com.compro.form.UserForm;
 import com.compro.util.Database;
 public class UserAction extends Action{
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
@@ -23,6 +24,7 @@ public class UserAction extends Action{
 		Database db = new Database();
 		String mail = request.getParameter("email");
 		String password = request.getParameter("password");
+		UserForm existuser = (UserForm)form;
 		
 		try{
 		name=db.executeQuery(mail);
@@ -31,7 +33,11 @@ public class UserAction extends Action{
 		}catch(SQLException sc){
 			sc.printStackTrace();
 		}
-		if(name.equals("record not found")||result.equals("false")){
+		if(name.equals("record not found")){
+			existuser.setEmail("invalid");
+			return mapping.findForward("failure");
+		}else if(result.equals("false")){
+			existuser.setPassword("incorrect");
 			return mapping.findForward("failure");
 		}
 		else{

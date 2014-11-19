@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
 <form-validation>
 	<formset>
 		<form name="newuserForm">
 			<field property="name" depends="required">
-				<arg key="label.common.name" />
+				<arg0 key="label.common.name" />
 			</field>
 			<field property="password2" depends="required,minlength,maxlength">
 				<arg0 key="label.common.password2" />
@@ -22,7 +25,7 @@
 				<arg0 key="label.common.email2" />
 			</field>
 			<field property="mobileno" depends="required,invalid">
-				<arg position="0" key="label.common.mobileno" />
+				<arg0 position="0" key="label.common.mobileno" />
 			</field>
 
 		</form>

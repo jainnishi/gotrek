@@ -40,12 +40,12 @@
 					<div class="form-group">
 						<bean:message key="label.common.email" />
 						<html:text property="email" styleClass="form-control"
-							styleId="exampleInputEmail2" />
+							styleId="loginEmail" />
 					</div>
 					<div class="form-group">
 						<bean:message key="label.common.password" />
 						<html:password property="password" styleClass="form-control"
-							styleId="exampleInputPassword2"/>
+							styleId="loginPassword"/>
 					</div>
 					<html:submit>
 						<bean:message key="label.common.button.submit" />
@@ -344,6 +344,15 @@
 			$(this).tab('show');
 		});
 		$('#myModal').appendTo("body");
+		$(document).ready(
+		function(){
+			if($('#loginEmail').val()=="invalid"){
+				alert("You are not a existing user.Please login first.");
+			}
+			if($('#loginPassword').val()=="incorrect"){
+				alert("You have entered an incorrect password");
+			}
+		});
 	</script>
 	<script type="text/javascript" src="formats/js/customized/code.js"></script>
 	<!-- Modal -->
