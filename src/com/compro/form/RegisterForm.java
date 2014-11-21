@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.validator.ValidatorForm;
 
-public class NewUserForm extends ValidatorForm {
+public class RegisterForm extends ValidatorForm {
 	/**
 	 * 
 	 */

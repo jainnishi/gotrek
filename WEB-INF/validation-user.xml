@@ -4,7 +4,7 @@
         "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
 <form-validation>
 	<formset>
-		<form name="newuserForm">
+		<form name="registerForm">
 			<field property="name" depends="required">
 				<arg0 key="label.common.name" />
 			</field>
@@ -29,7 +29,7 @@
 			</field>
 
 		</form>
-		<form name="userForm">
+		<form name="loginForm">
 			<field property="password" depends="required,minlength,maxlength">
 				<arg0 key="label.common.password" />
 				<arg1 key="${var:minlength}" name="minlength" resource="false" />

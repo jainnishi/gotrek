@@ -1,4 +1,4 @@
-package com.compro.action;
+package com.compro.controller;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,9 +8,10 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.compro.entity.User;
-import com.compro.form.NewUserForm;
+import com.compro.form.RegisterForm;
 import com.compro.util.Database;
-public class NewUserAction extends Action{
+
+public class RegisterAction extends Action{
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response) 
 					throws Exception {
@@ -19,8 +20,8 @@ public class NewUserAction extends Action{
 		String useremail;
 		String userpassword;
 		
-		//newuser is the object created to acces the methods of NewUserForm class
-		NewUserForm newuser = (NewUserForm)form;
+		//register is the object created to acces the methods of NewUserForm class
+		RegisterForm newuser = (RegisterForm)form;
 		
 		//user object for creating a session
 		User user= new User();
@@ -39,7 +40,7 @@ public class NewUserAction extends Action{
 		user.setEmail(useremail);
 		user.setName(username);
 		HttpSession session  = request.getSession();
-		session.setAttribute("NewSession", user);
+		session.setAttribute("loginsession", user);
 		return mapping.findForward("success");
 	}
 }

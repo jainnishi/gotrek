@@ -4,11 +4,11 @@
           "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 <struts-config>
 	<form-beans>
-		<form-bean name="userForm" type="com.compro.form.UserForm" >
+		<form-bean name="loginForm" type="com.compro.form.LoginForm" >
 			<form-property name="email" type="java.lang.String"/>
 			<form-property name="password" type="java.lang.String" />
 		</form-bean>
-		<form-bean name="newuserForm" type="com.compro.form.NewUserForm">
+		<form-bean name="registerForm" type="com.compro.form.RegisterForm">
 			<form-property name="name" type="java.lang.String" />
 			<form-property name="email2" type="java.lang.String" />
 			<form-property name="password2" type="java.lang.String" />
@@ -19,13 +19,13 @@
 		<action path="/loginpage" type="org.apache.struts.actions.ForwardAction"
 			parameter="/pages/tour.jsp">
 		</action>
-		<action path="/newuser" type="com.compro.action.NewUserAction"
-			validate="true" name="newuserForm" input="/pages/tour.jsp">
-			<forward name="success" path="/pages/newaccount.jsp" />
+		<action path="/register" type="com.compro.controller.RegisterAction"
+			validate="true" name="registerForm" input="/pages/tour.jsp">
+			<forward name="success" path="/pages/useraccount/useraccount.jsp" />
 			
 		</action>
-		<action path="/login" type="com.compro.action.UserAction" name="userForm"
-			input="/pages/tour.jsp" validate="true" scope="request">
+		<action path="/login" type="com.compro.controller.LoginAction" name="loginForm"
+			input="/pages/tour.jsp" validate="true" scope="session">
 			<forward name="success" path="/pages/useraccount/useraccount.jsp" />
 			<forward name="failure" path="/pages/tour.jsp" />
 		</action>

@@ -100,7 +100,7 @@
 						<html:errors property="password2"/>
 						<html:errors property="mobileno"/>
 						</font>
-						<html:form action="/newuser" styleId="register_form" method="post" onreset="true">
+						<html:form action="/register" styleId="register_form" method="post" onreset="true">
 							<div class="form-group" id="Name1">
 								<bean:message key="label.common.name" />
 								<html:text property="name" styleClass="form-control" />
@@ -348,9 +348,11 @@
 		function(){
 			if($('#loginEmail').val()=="invalid"){
 				alert("You are not a existing user.Please login first.");
+				$('#loginEmail').val()=="";
 			}
 			if($('#loginPassword').val()=="incorrect"){
 				alert("You have entered an incorrect password");
+				$('#loginPassword').val()=="";
 			}
 		});
 	</script>

@@ -1,4 +1,4 @@
-package com.compro.action;
+package com.compro.controller;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +11,9 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.compro.entity.User;
-import com.compro.form.UserForm;
+import com.compro.form.LoginForm;
 import com.compro.util.Database;
-public class UserAction extends Action{
+public class LoginAction extends Action{
 	public ActionForward execute(ActionMapping mapping,ActionForm form,
 			HttpServletRequest request,HttpServletResponse response) 
 					throws Exception {
@@ -24,7 +24,7 @@ public class UserAction extends Action{
 		Database db = new Database();
 		String mail = request.getParameter("email");
 		String password = request.getParameter("password");
-		UserForm existuser = (UserForm)form;
+		LoginForm existuser = (LoginForm)form;
 		
 		try{
 		name=db.executeQuery(mail);
