@@ -27,7 +27,6 @@
 			<field property="mobileno" depends="required,invalid">
 				<arg0 position="0" key="label.common.mobileno" />
 			</field>
-
 		</form>
 		<form name="loginForm">
 			<field property="password" depends="required,minlength,maxlength">
@@ -45,6 +44,23 @@
 			</field>
 			<field property="email" depends="required,email">
 				<arg0 key="label.common.email" />
+			</field>
+		</form>
+		<form name="trekForm">
+			<field property="trekname" depends="required">
+				<arg0 key="label.trek.trekname" />
+			</field>
+			<field property="startdate" depends="required,date">
+				<arg0 key="label.trek.startdate" />
+			</field>
+			<field property="enddate" depends="required,date">
+				<arg0 key="label.trek.enddate" />
+			</field>
+			<field property="meetup" depends="required">
+				<arg0 key="label.trek.meetup" />
+			</field>
+			<field property="category" depends="required">
+				<arg0 key="label.trek.category" />
 			</field>
 		</form>
 	</formset>

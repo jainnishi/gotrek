@@ -89,12 +89,13 @@ h2 {
 	color:rgb(0,0,128);
 	font-weight:bold;
 	vertical-align:bottom;
+	margin-left:60%;
 		
 }
 
 .footer{
 	margin-top:150px;
-	text-align: right;
+	/*text-align: right;*/
 	
 }
 hr{

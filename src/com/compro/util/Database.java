@@ -47,26 +47,12 @@ public class Database {
 		conn = DriverManager.getConnection("jdbc:mysql://"
 				+ this.serverName + "/" + this.dbName,
 				connectionProps);
-
 		return conn;
 	}
 
 	public String executeQuery(String email) throws SQLException{
-		try{
-			Class.forName("com.mysql.jdbc.Driver");
-		}catch(Exception ce){
-			ce.printStackTrace();
-		}
-		Connection conn = null;
+		Connection conn=getConnection();
 		PreparedStatement stmt = null;
-		Properties connectionProps = new Properties();
-		connectionProps.put("user", this.userName);
-		connectionProps.put("password", this.password);
-
-		conn = DriverManager.getConnection("jdbc:mysql://"
-				+ this.serverName + "/" + this.dbName,
-				connectionProps);
-
 		String name="";
 		try{
 			String sql ="SELECT first FROM USER_INFO WHERE Email=?";
@@ -98,20 +84,10 @@ public class Database {
 	//insert a new record in user_info from user database
 
 	public void insertRecord(String user_name,String user_email,String user_password)throws SQLException{
-		Connection conn = null;
+		Connection conn = getConnection();
 		PreparedStatement stmt = null;
 
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-
-
-			Properties connectionProps = new Properties();
-			connectionProps.put("user", this.userName);
-			connectionProps.put("password", this.password);
-
-			conn = DriverManager.getConnection("jdbc:mysql://"
-					+ this.serverName + "/" + this.dbName,
-					connectionProps);
 			String sql ="INSERT INTO USER_INFO(first,Email,Password)"+"VALUES(?,?,SHA1(?))";
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1,user_name);
@@ -131,23 +107,39 @@ public class Database {
 		}
 	}
 	
+	public void insertrekRecord(String trek_name,String start_date,String end_date,String meetup_point,String category)throws SQLException{
+		Connection conn = getConnection();
+		
+		PreparedStatement stmt = null;
+			try{
+			String sql ="INSERT INTO trek_info(trek_name,start_date,end_date,meetup_point,category)"+"VALUES(?,?,?,?,?)";
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1,trek_name);
+			stmt.setString(2,start_date);
+			stmt.setString(3,end_date);
+			stmt.setString(4,meetup_point);
+			stmt.setString(5,category);
+			
+
+			// execute the preparedstatement
+			stmt.execute();
+			System.out.println("A new trek record has been inserted");
+		}catch (SQLException e) {
+			System.out.println("ERROR: Could not connect to the database");
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			conn.close();
+		}
+	}
+	
 	//match the password entered is correct or incorrect
 	public String verifypassword(String email,String password)throws SQLException{
-		try{
-			Class.forName("com.mysql.jdbc.Driver");
-		}catch(Exception ce){
-			ce.printStackTrace();
-		}
-		Connection conn = null;
+		
+		Connection conn = getConnection();
 		PreparedStatement stmt = null;
 		PreparedStatement stmt2 = null;
-		Properties connectionProps = new Properties();
-		connectionProps.put("user", this.userName);
-		connectionProps.put("password", this.password);
-
-		conn = DriverManager.getConnection("jdbc:mysql://"
-				+ this.serverName + "/" + this.dbName,
-				connectionProps);
 		String vpass="";
 		String lpass="";
 		try{
@@ -207,18 +199,17 @@ public class Database {
 
 	}
 
-//	public static void main(String[] args) throws SQLException{
-//		Database usd = new Database();
-//		//Connection conn = null;
-//
-//	/*	try {
-//			conn = usd.getConnection();
-//			System.out.println("Connected to database");
-//		} catch (SQLException e) {
-//			System.out.println("ERROR: Could not connect to the database");
-//			e.printStackTrace();
-//			return;
-//		}
+	public static void main(String[] args) throws SQLException{
+		//Database usd = new Database();
+//Connection conn = null;
+	//try {
+		//	conn = usd.getConnection();
+			//System.out.println("Connected to database");
+		//} catch (SQLException e) {
+		//	System.out.println("ERROR: Could not connect to the database");
+		//	e.printStackTrace();
+		//	return;
+		//}
 //
 //			try{
 //		stmt = conn.createStatement();
@@ -260,8 +251,8 @@ public class Database {
 //			s.printStackTrace();
 //		}
 //		
-//		try{
-//			usd.insertRecord("ANU","ANU.GOELl@GMAIL.COM","ANU");
+//	try{
+//			usd.insertrekRecord("Dudhsagar waterfall","2015-01-17","2015-01-18","Island meetup","nature lover");
 //		}catch(SQLException s){
 //			s.printStackTrace();
 //		}
@@ -270,11 +261,12 @@ public class Database {
 //
 //	
 //		try{
-//			String result=usd.verifypassword("ANU.GOELl@GMAIL.COM","ANU");
+//			String result=usd.verifypassword("Rajmanchi"."","ANU");
 //			System.out.println(result);
 //		}catch(SQLException s){
 //			s.printStackTrace();
 //		}
 //		}
+	
 
-}
+}}

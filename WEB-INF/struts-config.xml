@@ -14,6 +14,13 @@
 			<form-property name="password2" type="java.lang.String" />
 		 	<form-property name="mobileno" type="java.lang.String" /> 
 		</form-bean>
+		<form-bean name="trekForm" type="com.compro.form.TrekForm">
+			<form-property name="trekname" type="java.lang.String" />
+			<form-property name="startdate" type="java.lang.String" />
+			<form-property name="enddate" type="java.lang.String" />
+			<form-property name="meetup" type="java.lang.String" />
+			<form-property name="category" type="java.lang.String" />
+		</form-bean>
 	</form-beans>
 	<action-mappings>
 		<action path="/loginpage" type="org.apache.struts.actions.ForwardAction"
@@ -23,6 +30,10 @@
 			validate="true" name="registerForm" input="/pages/tour.jsp">
 			<forward name="success" path="/pages/useraccount/useraccount.jsp" />
 			
+		</action>
+		<action path="/createtrek" type="com.compro.controller.TrekAction"
+			validate="true" name="trekForm" input="/pages/tour.jsp/#create_trek">
+			<forward name="success" path="/pages/welcome.jsp" />
 		</action>
 		<action path="/login" type="com.compro.controller.LoginAction" name="loginForm"
 			input="/pages/tour.jsp" validate="true" scope="session">
