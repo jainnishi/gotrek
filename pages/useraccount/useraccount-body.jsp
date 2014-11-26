@@ -6,7 +6,10 @@
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <div class="container">
-	<button type="button" class="btn btn-default" style="background-color:rgb(227,244,11);margin-left:77%;">Log Out</button>
+	<form action="logout.do" method="get">
+		<button type="submit" class="btn btn-default"
+			style="background-color: rgb(227, 244, 11); margin-left: 77%;" >Log Out</button>
+	</form>
 	<div class="image">
 		<img src="formats/images/t23.jpg" class="sky" />
 		<h2>

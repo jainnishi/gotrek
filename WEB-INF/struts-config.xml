@@ -32,7 +32,7 @@
 			
 		</action>
 		<action path="/createtrek" type="com.compro.controller.TrekAction"
-			validate="true" name="trekForm" input="/pages/tour.jsp/#create_trek">
+			validate="true" name="trekForm" input="/pages/tour.jsp" >
 			<forward name="success" path="/pages/welcome.jsp" />
 		</action>
 		<action path="/login" type="com.compro.controller.LoginAction" name="loginForm"

@@ -168,7 +168,7 @@
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
 								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+									style="padding-left: 10px;"><a href="join.do?trek_id=2">Join</a></span>
 								<hr>
 								<p class="descp">We at Trek Mates India have arranged a Trek
 									to Vikatgad (Peb) Fort on 26th Oct 2014, Sunday. Trek Details
