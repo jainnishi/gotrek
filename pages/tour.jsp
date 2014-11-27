@@ -28,24 +28,19 @@
 				<h3 class="text-muted">Plan my Trek</h3>
 				<img src="formats/images/t16.jpg"
 					style="width: 300px; float: right;" />
-
-
 			</div>
-
 			<div class="login">
-
 				<html:form action="/login" styleClass="form-inline" onreset="true">
-
 					<span class="user_login">Login</span>
 					<div class="form-group">
 						<bean:message key="label.common.email" />
 						<html:text property="email" styleClass="form-control"
-							styleId="exampleInputEmail2" />
+							styleId="loginEmail" />
 					</div>
 					<div class="form-group">
 						<bean:message key="label.common.password" />
-						<html:text property="password" styleClass="form-control"
-							styleId="exampleInputPassword2"/>
+						<html:password property="password" styleClass="form-control"
+							styleId="loginPassword" />
 					</div>
 					<html:submit>
 						<bean:message key="label.common.button.submit" />
@@ -53,11 +48,10 @@
 					<html:reset>
 						<bean:message key="label.common.button.reset" />
 					</html:reset>
-					
 				</html:form>
-				<font color="red"> <html:errors />
+				<font color="red"> <html:errors property="email" /> <html:errors
+						property="password" />
 				</font>
-				
 			</div>
 			<div style="margin-top: 50px;">
 				<nav id="navbar">
@@ -92,9 +86,12 @@
 					</div>
 					<div class="col-md-4 register">
 						<h3>Let's trek together...get Registered!</h3>
-						<br /> <br /> <font color="red"> <html:errors />
+						<br /> <br /> <font color="red"> <html:errors
+								property="name" /> <html:errors property="email2" /> <html:errors
+								property="password2" /> <html:errors property="mobileno" />
 						</font>
-						<html:form action="/newuser" styleId="register_form" method="post" onreset="true">
+						<html:form action="/register" styleId="register_form"
+							method="post" onreset="true">
 							<div class="form-group" id="Name1">
 								<bean:message key="label.common.name" />
 								<html:text property="name" styleClass="form-control" />
@@ -105,11 +102,11 @@
 							</div>
 							<div class="form-group" id="Password1">
 								<bean:message key="label.common.password2" />
-								<html:text property="password2" styleClass="form-control" />
+								<html:password property="password2" styleClass="form-control" />
 							</div>
-							<div class="form-group" id="Password1">
-								<bean:message key="label.common.repassword" />
-								<html:text property="repassword" styleClass="form-control"/>
+							<div class="form-group">
+								<bean:message key="label.common.mobileno" />
+								<html:text property="mobileno" styleClass="form-control" />
 							</div>
 							<div class="checkbox">
 								<label><input type="checkbox"> Remember me</label>
@@ -146,15 +143,20 @@
 								<h2>PMT: Trek to Rajmachi on 29th - 30th Nov '14.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+								
+									<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Rajmanchi" />
+										<input type="hidden" name="trek_id" value="1" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">Hey Mates, Dont miss the fun as Trek Mates
 									India invite you for An overnight Trek to Rajmachi and return
 									Via Karjat Route on 29th - 30th Nov '14. Little info about the
 									fort Type:...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -170,16 +172,20 @@
 								<h2>PMT: Trek to Peb Fort on 26th Oct '14.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Peb Fort" />
+										<input type="hidden" name="trek_id" value="2" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">We at Trek Mates India have arranged a Trek
 									to Vikatgad (Peb) Fort on 26th Oct 2014, Sunday. Trek Details
 									:Type : Hill FortHeight : 2100 Feet above MSL (Approx) Grade :
 									MediumDistrict : RaigadRegion : KarjatBase Village :
 									NeralSome...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -197,15 +203,19 @@
 									2015.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Netrani island" />
+										<input type="hidden" name="trek_id" value="3" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">We at Trek Mates India Invite you for Scuba
 									Diving Special Visit to Netrani Island, Karnataka on 24th
 									January to 26th January 2015. Did you ever wanted to swim like
 									a...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -223,15 +233,20 @@
 									2015</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+							
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Dudhsagar waterfall" />
+										<input type="hidden" name="trek_id" value="4" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">Visit the Legendary Waterfall of India with
 									Trek Mates India – Trek to Dudhsagar Waterfall Top through
 									Jungle Route and Camping near the Waterfall on 17th and 18th
 									January 2015. (Leaving...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -337,6 +352,17 @@
 			$(this).tab('show');
 		});
 		$('#myModal').appendTo("body");
+		$(document).ready(
+		function(){
+			if($('#loginEmail').val()=="invalid"){
+				alert("You are not a existing user.Please login first.");
+				$('#loginEmail').val()=="";
+			}
+			if($('#loginPassword').val()=="incorrect"){
+				alert("You have entered an incorrect password");
+				$('#loginPassword').val()=="";
+			}
+		});
 	</script>
 	<script type="text/javascript" src="formats/js/customized/code.js"></script>
 	<!-- Modal -->
@@ -351,26 +377,69 @@
 					<h4 class="modal-title" id="myModalLabel">Create New Trek</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form">
+					<html:form action="/createtrek" styleClass="form-horizontal"
+						onreset="true">
 						<div class="form-group">
-							<label for="trek_heading" class="col-sm-2 control-label">Tag
-								Heading</label>
+							<div class="col-sm-2">
+								<bean:message key="label.trek.trekname" />
+							</div>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="trek_heading"
-									placeholder="Trek heading">
+								<font color="red"> <html:errors property="trekname" /></font>
+								<html:text property="trekname" styleClass="form-control"
+									styleId="trek_heading" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="trek_description" class="col-sm-2 control-label">Tag
-								Description</label>
+							<div class="col-sm-2">
+								<bean:message key="label.trek.description" />
+							</div>
 							<div class="col-sm-10">
 								<textarea rows="10" style="overflow: scroll; width: 350px;"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="upload_file" class="col-sm-2 control-label">Upload
-								File</label>
-							<div class="col-sm-10">
+							<div class="col-sm-2">
+								<bean:message key="label.trek.startdate" />
+							</div>
+							<div class="col-sm-8">
+								<font color="red"> <html:errors property="startdate" /></font>
+								<html:text property="startdate" styleClass="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<bean:message key="label.trek.enddate" />
+							</div>
+							<div class="col-sm-8">
+								<font color="red"> <html:errors property="enddate" /></font>
+								<html:text property="enddate" styleClass="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<bean:message key="label.trek.meetup" />
+							</div>
+							<div class="col-sm-8">
+								<font color="red"> <html:errors property="meetup" /></font>
+								<html:text property="meetup" styleClass="form-control"
+									styleId="meetup_point" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<bean:message key="label.trek.category" />
+							</div>
+							<div class="col-sm-8">
+								<font color="red"> <html:errors property="category" /></font>
+								<html:text property="category" styleClass="form-control"
+									styleId="meetup_point" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
+								<bean:message key="label.trek.uploadfile" />
+							</div>
+							<div class="col-sm-8">
 								<span class="btn btn-default btn-file"> <input
 									type="file">
 								</span>
@@ -378,13 +447,17 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-default">Post</button>
+								<html:submit styleClass="btn btn-default">
+									<bean:message key="label.trek.button.Post" />
+								</html:submit>
 							</div>
 						</div>
-					</form>
+					</html:form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<html:reset>
+						<bean:message key="label.trek.button.reset" />
+					</html:reset>
 					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
