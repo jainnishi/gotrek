@@ -143,15 +143,20 @@
 								<h2>PMT: Trek to Rajmachi on 29th - 30th Nov '14.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+								
+									<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Rajmanchi" />
+										<input type="hidden" name="trek_id" value="1" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">Hey Mates, Dont miss the fun as Trek Mates
 									India invite you for An overnight Trek to Rajmachi and return
 									Via Karjat Route on 29th - 30th Nov '14. Little info about the
 									fort Type:...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -167,16 +172,20 @@
 								<h2>PMT: Trek to Peb Fort on 26th Oct '14.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="join.do?trek_id=2">Join</a></span>
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Peb Fort" />
+										<input type="hidden" name="trek_id" value="2" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">We at Trek Mates India have arranged a Trek
 									to Vikatgad (Peb) Fort on 26th Oct 2014, Sunday. Trek Details
 									:Type : Hill FortHeight : 2100 Feet above MSL (Approx) Grade :
 									MediumDistrict : RaigadRegion : KarjatBase Village :
 									NeralSome...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -194,15 +203,19 @@
 									2015.</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Netrani island" />
+										<input type="hidden" name="trek_id" value="3" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">We at Trek Mates India Invite you for Scuba
 									Diving Special Visit to Netrani Island, Karnataka on 24th
 									January to 26th January 2015. Did you ever wanted to swim like
 									a...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>
@@ -220,15 +233,20 @@
 									2015</h2>
 								<span class="glyphicon glyphicon-user"></span> <span
 									class="glyphicon glyphicon-comment" style="padding-left: 10px;">Comments</span>
-								<span class="glyphicon glyphicon-plus"
-									style="padding-left: 10px;"><a href="#">Join</a></span>
+							
+								<form action="join.do" method="get" >
+									
+										<input type="hidden" name="trekname" value="Dudhsagar waterfall" />
+										<input type="hidden" name="trek_id" value="4" />
+										<button type="submit" styleClass="btn btn-sm">
+											Join
+										</button>
+									</form>
 								<hr>
 								<p class="descp">Visit the Legendary Waterfall of India with
 									Trek Mates India – Trek to Dudhsagar Waterfall Top through
 									Jungle Route and Camping near the Waterfall on 17th and 18th
 									January 2015. (Leaving...</p>
-								<a href="#" target="_blank" id="code" type="submit"
-									class="btn btn-sm">Read More</a>
 							</div>
 						</div>
 					</div>

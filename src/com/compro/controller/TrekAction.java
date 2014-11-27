@@ -9,7 +9,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.compro.TrekManager.TrekManagerImpl;
+import com.compro.services.trekmanager.impl.TrekManagerImpl;
 import com.compro.entity.Trek;
 import com.compro.form.TrekForm;
 
@@ -42,7 +42,7 @@ public class TrekAction extends Action {
 				trek.setMeetup(meetup);
 				trek.setCategory(category);
 				
-				TrekManagerImpl trk= TrekManagerImpl.getInstance();
+			TrekManagerImpl trk= TrekManagerImpl.getInstance();
 					//new record inserted in the database
 					trk.createTrek(trek);
 				

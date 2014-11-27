@@ -81,6 +81,59 @@ public class Database {
 		}
 
 	}
+	
+	public String getUserid(String username) throws SQLException{
+		Connection conn=getConnection();
+		PreparedStatement stmt = null;
+		String uid="";
+		try{
+			String sql ="SELECT id FROM USER_INFO WHERE first=?";
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1,username);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()){
+				uid = rs.getString("id");
+			}
+		}catch (SQLException e) {
+			System.out.println("ERROR: Could not connect to the database");
+			e.printStackTrace();
+			return "Could not connect to the database";
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			if (stmt != null) { 
+				stmt.close(); 
+			}
+			conn.close();
+		}
+		if( uid == ""){
+			return "record not found";
+		}else{
+			return uid;
+		}
+
+	}
+	
+	public void getTrek(String uid,String trkid) throws SQLException{
+		Connection conn=getConnection();
+		PreparedStatement stmt = null;
+		try{
+			String sql ="INSERT INTO trekuser_xref(trek_id,user_id)"+"VALUES(?,?)";
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1,trkid);
+			stmt.setString(2,uid);
+			stmt.execute();
+			System.out.println("A new record has been inserted");
+		}catch (SQLException e) {
+			System.out.println("ERROR: Could not connect to the database");
+			e.printStackTrace();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			conn.close();
+		}
+	}
+		
 	//insert a new record in user_info from user database
 
 	public void insertRecord(String user_name,String user_email,String user_password)throws SQLException{
@@ -200,8 +253,11 @@ public class Database {
 	}
 
 	public static void main(String[] args) throws SQLException{
-		//Database usd = new Database();
-//Connection conn = null;
+	//	Database usd = new Database();
+	//	String id=usd.getUserid("Nishi Jain");
+	//	usd.getTrek(id,"1");
+
+		//Connection conn = null;
 	//try {
 		//	conn = usd.getConnection();
 			//System.out.println("Connected to database");
