@@ -18,7 +18,7 @@ public class TrekManagerImpl implements TrekHandler {
 	      return instance;
 	   }
 	@SuppressWarnings("finally")
-	@Override
+	
 	public int createTrek(Trek trek){
 		InsertTrekCommand inst = new InsertTrekCommand(trek.getTrekname(),trek.getStartdate(),trek.getEnddate(),trek.getMeetup(),trek.getCategory());
 		try{

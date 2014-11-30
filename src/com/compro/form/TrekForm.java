@@ -15,7 +15,14 @@ public class TrekForm extends ValidatorForm{
 	String enddate;
 	String meetup;
 	String category;
+	String description;
 
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public String getTrekname() {
 		return trekname;
 	}
@@ -55,6 +62,7 @@ public class TrekForm extends ValidatorForm{
 		enddate=null;
 		category=null;
 		meetup=null;
+		description=null;
 		
 	}
 	

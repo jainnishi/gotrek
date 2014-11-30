@@ -20,6 +20,7 @@
 			<form-property name="enddate" type="java.lang.String" />
 			<form-property name="meetup" type="java.lang.String" />
 			<form-property name="category" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
 		</form-bean>
 	</form-beans>
 	<action-mappings>

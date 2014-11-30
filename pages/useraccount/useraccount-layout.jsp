@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>
 <html>
@@ -27,6 +29,8 @@
 	<script src="formats/js/bootstrap.js"></script>
 	<script src="formats/js/jquery-2.1.1.js"></script>
 	<script>
+	
+	
 	var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth()+1; //January is 0!
