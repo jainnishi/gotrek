@@ -26,6 +26,9 @@ public class LoginAction extends Action{
 		String password = request.getParameter("password");
 		LoginForm existuser = (LoginForm)form;
 		
+		/*
+		 * call getLatestTreks and save it in request 
+		 */
 		try{
 		name=db.executeQuery(mail);
 		result=db.verifypassword(mail,password);

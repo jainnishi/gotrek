@@ -28,6 +28,14 @@
 		<servlet-name>Logout</servlet-name>
 		<url-pattern>/logout.do</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateTrek</servlet-name>
+		<servlet-class>com.compro.controller.UpdateTrek</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateTrek</servlet-name>
+		<url-pattern>/updatetrek.do</url-pattern>
+	</servlet-mapping>
 	<filter>
 		<filter-name>SessionFilter</filter-name>
 		<filter-class>

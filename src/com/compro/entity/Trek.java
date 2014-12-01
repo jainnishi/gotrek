@@ -1,11 +1,40 @@
 package com.compro.entity;
 
 public class Trek {
+	public Trek(String trekname, String startdate, String enddate,
+			String meetup, String category,String description,String imgurl, String treksummary) {
+		super();
+		this.trekname = trekname;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.meetup = meetup;
+		this.category = category;
+		this.description = description;
+		this.imgurl = imgurl;
+		this.treksummary = treksummary;
+	
+	}
 	String trekname;
 	String startdate;
 	String enddate;
 	String meetup;
 	String category;
+	String imgurl;
+	String description;
+	
+	public String getImgurl() {
+		return imgurl;
+	}
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
+	public String getTreksummary() {
+		return treksummary;
+	}
+	public void setTreksummary(String treksummary) {
+		this.treksummary = treksummary;
+	}
+	String treksummary;
 	
 	public String getTrekname() {
 		return trekname;

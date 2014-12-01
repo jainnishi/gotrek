@@ -1,6 +1,7 @@
 package com.compro.services.trekmanager.impl;
 
 import java.sql.SQLException;
+import java.util.LinkedList;
 
 import com.compro.entity.Trek;
 import com.compro.services.trekmanager.TrekHandler;
@@ -36,5 +37,10 @@ public class TrekManagerImpl implements TrekHandler {
 		}finally{
 			return 0;
 		}
+	}
+	@Override
+	public LinkedList<Trek> getLatestTreks(int numberOfTreks) {
+		// TODO write logic to get latest treks from db
+		return null;
 	}
 }

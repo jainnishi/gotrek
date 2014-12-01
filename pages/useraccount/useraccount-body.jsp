@@ -313,6 +313,16 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-2">
+								<bean:message key="label.trek.trekheading" />
+							</div>
+							<div class="col-sm-8">
+								<font color="red"> <html:errors property="trekheading" /></font>
+								<html:text property="trekheading" styleClass="form-control"
+									styleId="trek_heading" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-2">
 								<bean:message key="label.trek.description" />
 							</div>
 							<div class="col-sm-10">
@@ -362,8 +372,8 @@
 								<bean:message key="label.trek.uploadfile" />
 							</div>
 							<div class="col-sm-8">
-								<span class="btn btn-default btn-file"> <input
-									type="file">
+								<span class="btn btn-default btn-file"> 
+								<html:file property="imgfile"/>
 								</span>
 							</div>
 						</div>

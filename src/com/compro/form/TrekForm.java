@@ -16,7 +16,21 @@ public class TrekForm extends ValidatorForm{
 	String meetup;
 	String category;
 	String description;
+	String imgfile;
+	String trekheading;
 
+	public String getTrekheading() {
+		return trekheading;
+	}
+	public void setTrekheading(String trekheading) {
+		this.trekheading = trekheading;
+	}
+	public String getImgfile() {
+		return imgfile;
+	}
+	public void setImgfile(String imgfile) {
+		this.imgfile = imgfile;
+	}
 	public String getDescription() {
 		return description;
 	}
