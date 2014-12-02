@@ -14,6 +14,9 @@ public class Trek {
 		this.treksummary = treksummary;
 	
 	}
+	public Trek(){
+		
+	}
 	String trekname;
 	String startdate;
 	String enddate;
@@ -21,20 +24,14 @@ public class Trek {
 	String category;
 	String imgurl;
 	String description;
-	
-	public String getImgurl() {
-		return imgurl;
-	}
-	public void setImgurl(String imgurl) {
-		this.imgurl = imgurl;
-	}
-	public String getTreksummary() {
-		return treksummary;
-	}
-	public void setTreksummary(String treksummary) {
-		this.treksummary = treksummary;
-	}
 	String treksummary;
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 	public String getTrekname() {
 		return trekname;
@@ -65,6 +62,18 @@ public class Trek {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public String getImgurl() {
+		return imgurl;
+	}
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
+	public String getTreksummary() {
+		return treksummary;
+	}
+	public void setTreksummary(String treksummary) {
+		this.treksummary = treksummary;
 	}
 	
 }

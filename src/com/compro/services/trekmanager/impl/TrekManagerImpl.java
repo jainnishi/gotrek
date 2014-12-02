@@ -2,9 +2,11 @@ package com.compro.services.trekmanager.impl;
 
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.List;
 
 import com.compro.entity.Trek;
 import com.compro.services.trekmanager.TrekHandler;
+import com.compro.sqlcommands.GetUpdateTrekCommand;
 import com.compro.sqlcommands.InsertTrekCommand;
 
 public class TrekManagerImpl implements TrekHandler {
@@ -38,9 +40,25 @@ public class TrekManagerImpl implements TrekHandler {
 			return 0;
 		}
 	}
-	@Override
-	public LinkedList<Trek> getLatestTreks(int numberOfTreks) {
-		// TODO write logic to get latest treks from db
-		return null;
+
+	
+	public List<Trek> getLatestTreks(){
+		GetUpdateTrekCommand upd = new GetUpdateTrekCommand();
+		List<Trek> trekobject = new LinkedList<Trek>();
+		try{
+			trekobject = upd.execute();
+			return trekobject;
+		}catch(SQLException e){
+			System.out.println("ERROR: Could not connect to the database");
+			e.printStackTrace();
+			return trekobject;
+		}catch(Exception e){
+			e.printStackTrace();
+			return trekobject;
+		}
 	}
 }
+		
+		
+	
+

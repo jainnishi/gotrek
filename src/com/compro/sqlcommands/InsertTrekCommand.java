@@ -18,6 +18,8 @@ public class InsertTrekCommand extends AbstractCommand{
 	public String getSql(){
 		return sql;
 	}
+	
+
 	@Override
 	public int execute() throws SQLException{
 		Connection conn=null;

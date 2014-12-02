@@ -48,7 +48,7 @@ public class GetUpdateTrekCommand{
 			lm.add(new Trek(trekname,sdate,edate,mpoint,categ,note,img,smry));
 			}
 		
-			System.out.println("A new trek record has been inserted");
+			System.out.println("New trek record has been updated");
 			return lm;
 		}catch (SQLException e) {
 			System.out.println("ERROR: Could not connect to the database");

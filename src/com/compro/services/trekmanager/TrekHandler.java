@@ -1,6 +1,6 @@
 package com.compro.services.trekmanager;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import com.compro.entity.Trek;
 
@@ -11,5 +11,5 @@ public interface TrekHandler {
 	//public void getTrek(String uid,String trkid);
 	//public boolean isValidTrek();
 	//public void deleteTrek(Trek trek);
-	public LinkedList<Trek> getLatestTreks(int numberOfTreks);
+	public List<Trek> getLatestTreks();
 }

@@ -57,30 +57,22 @@
 		<hr class="mar1">
 	</div>
 	<div id="color-animate">
-		<h3 class="font-design">Upcoming Treks!
-	<!-- 	<form class="form-inline" action="updatetrek.do" method="get">
-		<button type="submit" class="btn btn-md btn-danger" style="display:inline;" id="updatetrek">
-  <span class="glyphicon glyphicon-refresh"></span>
-</button></form>  --></h3>
-		
+		<h3 class="font-design">Upcoming Treks! </h3>
 		<p class="position-animate">
-			<img class="demo-trkpic" src="formats/images/t18.jpg"
-				alt="image is not available"> <span class="demo">PMT:
+		<!-- 	<img class="demo-trkpic" src="formats/images/t18.jpg"
+				alt="image is not available"/> 
+			<span class="demo">PMT:
 				Trek to Peb Fort on 26th Oct '14JDSFKJSHDJJJJJJJJJjdskfhaksjdhasdagjshdasdah.</span> <img class="demo-trkpic"
-				src="formats/images/t18.jpg" alt="image is not available"> <span
-				class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span> <img
+				src="formats/images/t18.jpg" alt="image is not available"> 
+			<span class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span> <img
 				class="demo-trkpic" src="formats/images/t18.jpg"
 				alt="image is not available"> <span class="demo">PMT:
 				Trek to Peb Fort on 26th Oct '14.</span> <img class="demo-trkpic"
 				src="formats/images/t18.jpg" alt="image is not available"> <span
-				class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span>
+				class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span> -->
 		</p>
-
 	</div>
-
-
 			<div class="container">
-
 				<div class="row">
 					<div class="col-md-8">
 						<img id="img1" style="height: 532px;" src="formats/images/t4.jpg">
@@ -129,8 +121,6 @@
 				</div>
 			</div>
 			<div id="myDiv"></div>
-
-	
 		<div class="footer">
 			<div class="container">
 				<hr>
@@ -181,7 +171,6 @@
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<!-- <script src="formats/js/jquery-2.1.1.js"></script> -->
 	<script>
-		
 		$(document).ready(function() {
 			if ($('#loginEmail').val() == "invalid") {
 				alert("You are not a existing user.Please login first.");
@@ -192,38 +181,9 @@
 				$('#loginPassword').val() == "";
 			}
 		});
-	<!--	$(document).ready(function() {
-		var xmlhttp;
-			if (window.XMLHttpRequest)
-			  {// code for IE7+, Firefox, Chrome, Opera, Safari
-			  xmlhttp=new XMLHttpRequest();
-			  }
-			else
-			  {// code for IE6, IE5
-			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-			  }
-			xmlhttp.onreadystatechange=function()
-			  {
-			  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-			    {
-			    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-			    }
-			  }
-			xmlhttp.open("GET","updatetrek.do",true);
-			xmlhttp.send();
-			
-		});-->
-		$(document).ready(function() {
-			$ajax({
-				url: '/gotrek/updatetrek.do',
-				success: $('#myDiv').text('An error occurred');
-				failure: $('#myDiv').text('An error occurred');
-				type: 'GET',
-			});
-		});
+	
+		
 	</script>
 	<script type="text/javascript" src="formats/js/customized/code.js"></script>
-
-	
 </body>
 </html>
