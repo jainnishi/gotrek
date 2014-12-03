@@ -56,20 +56,9 @@
 		</div>
 		<hr class="mar1">
 	</div>
-	<div id="color-animate">
+	<div id="color-animate" style="overflow:hidden;">
 		<h3 class="font-design">Upcoming Treks! </h3>
 		<p class="position-animate">
-		<!-- 	<img class="demo-trkpic" src="formats/images/t18.jpg"
-				alt="image is not available"/> 
-			<span class="demo">PMT:
-				Trek to Peb Fort on 26th Oct '14JDSFKJSHDJJJJJJJJJjdskfhaksjdhasdagjshdasdah.</span> <img class="demo-trkpic"
-				src="formats/images/t18.jpg" alt="image is not available"> 
-			<span class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span> <img
-				class="demo-trkpic" src="formats/images/t18.jpg"
-				alt="image is not available"> <span class="demo">PMT:
-				Trek to Peb Fort on 26th Oct '14.</span> <img class="demo-trkpic"
-				src="formats/images/t18.jpg" alt="image is not available"> <span
-				class="demo">PMT: Trek to Peb Fort on 26th Oct '14.</span> -->
 		</p>
 	</div>
 			<div class="container">

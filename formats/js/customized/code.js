@@ -3,14 +3,17 @@ $(document).ready(function(){
     	
 change_image();
 
-$.get('updatetrek', function(responseJson) {
+$.get('updatetrek',function(responseJson){
 	console.log(responseJson.TrekList);
-	$.each(responseJson.TrekList, function(index,TrekList) {	
-		console.log(index);
-	var img = $('<img class="demo-trkpic">');
-	img.attr('src',Treklist.imgurl)
-	img.appendTo($('#position-animate')); 
-	$('<span class="demo">').appendTo($('#position-animate'));
+	$.each(responseJson.TrekList,function(index,TrekList){ 	
+		console.log(TrekList.treksum);
+		console.log(TrekList.imgurl);
+		var img = $('<img class="demo-trkpic">');
+		img.attr('src',TrekList.imgurl);
+		img.appendTo('.position-animate'); 
+		$('<span/>', {
+		    'class':'demo',
+		 }).text(TrekList.treksum).appendTo('.position-animate');
 	});
 });
 });
